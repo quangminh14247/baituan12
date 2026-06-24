@@ -34,14 +34,14 @@ void tim_duong(string bd, string dich)
 
     if (!tham[dich])
     {
-        cout << "Khong co duong di!";
+        cout << "Khong co duong di";
         return;
     }
 
     vector<string> kq;
     string x = dich;
 
-    while (true)
+    while (x != "")
     {
         kq.push_back(x);
 
@@ -64,34 +64,25 @@ void tim_duong(string bd, string dich)
 
 int main()
 {
-    ds["Ha Noi"] =
-    {
-        "Son Tay",
-        "Hoa Binh",
-        "Phu Ly",
-        "Hai Duong",
-        "Thai Nguyen",
-        "Bac Ninh"
-    };
-
-    ds["Son Tay"] = {"Ha Noi"};
-    ds["Hoa Binh"] = {"Ha Noi"};
-    ds["Phu Ly"] = {"Ha Noi", "Hung Yen"};
-    ds["Hung Yen"] = {"Phu Ly", "Hai Duong"};
-    ds["Hai Duong"] = {"Ha Noi", "Hung Yen", "Hai Phong"};
-    ds["Hai Phong"] = {"Hai Duong", "Uong Bi"};
-    ds["Thai Nguyen"] = {"Ha Noi"};
-    ds["Bac Ninh"] = {"Ha Noi", "Bac Giang", "Uong Bi"};
-    ds["Bac Giang"] = {"Bac Ninh", "Uong Bi"};
-    ds["Uong Bi"] = {"Bac Giang", "Bac Ninh", "Hai Phong"};
+    ds["HaNoi"] = {"SonTay", "HoaBinh", "PhuLy", "HaiDuong", "ThaiNguyen", "BacNinh"};
+    ds["SonTay"] = {"HaNoi"};
+    ds["HoaBinh"] = {"HaNoi"};
+    ds["PhuLy"] = {"HaNoi", "HungYen"};
+    ds["HungYen"] = {"PhuLy", "HaiDuong"};
+    ds["HaiDuong"] = {"HaNoi", "HungYen", "HaiPhong"};
+    ds["HaiPhong"] = {"HaiDuong", "UongBi"};
+    ds["ThaiNguyen"] = {"HaNoi"};
+    ds["BacNinh"] = {"HaNoi", "BacGiang", "UongBi"};
+    ds["BacGiang"] = {"BacNinh", "UongBi"};
+    ds["UongBi"] = {"BacGiang", "BacNinh", "HaiPhong"};
 
     string bd, dich;
 
     cout << "Nhap tinh bat dau: ";
-    getline(cin, bd);
+    cin >> bd;
 
     cout << "Nhap tinh dich: ";
-    getline(cin, dich);
+    cin >> dich;
 
     tim_duong(bd, dich);
 
